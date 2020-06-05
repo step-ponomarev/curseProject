@@ -1,0 +1,41 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@rollup/plugin-commonjs": "11.0.2",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@smui/button": "^1.0.0-beta.21",
+    "@smui/select": "^1.0.0-beta.21",
+    "@smui/textfield": "^1.0.0-beta.21",
+    "babel-loader": "^8.1.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "path": "^0.12.7",
+    "rollup": "^1.20.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-postcss": "^3.1.1",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "sass": "^1.26.5",
+    "svelte": "^3.0.0",
+    "svelte-cli": "^3.0.0",
+    "svelte-loader": "^2.13.6",
+    "svelte-material-ui": "^1.0.0-beta.21",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@smui/checkbox": "^1.0.0-beta.21",
+    "@smui/form-field": "^1.0.0-beta.21",
+    "bare-css": "^2.0.3",
+    "sirv-cli": "^0.4.4",
+    "svelte-routing": "^1.4.2"
+  }
+}
