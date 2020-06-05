@@ -28,19 +28,19 @@ public class GroupController {
   }
 
   @DeleteMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public void deleteGroup(@RequestBody GroupDto groupDto) {
     service.delete(groupDto);
   }
 
   @PutMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public ResponseEntity<GroupDto> putGroup(@RequestBody GroupDto groupDto) {
     return ResponseEntity.ok(service.put(groupDto));
   }
 
   @PostMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public ResponseEntity<GroupDto> addGroup(@RequestBody GroupDto groupDto) {
     return ResponseEntity.ok(service.save(groupDto));
   }

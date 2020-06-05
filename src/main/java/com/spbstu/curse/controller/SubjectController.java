@@ -28,18 +28,19 @@ public class SubjectController {
   }
 
   @PostMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public ResponseEntity<SubjectDto> addSubject(@RequestBody SubjectDto subjectDto) {
     return ResponseEntity.ok(service.save(subjectDto));
   }
 
   @PutMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public ResponseEntity<SubjectDto> putSubject(@RequestBody SubjectDto subjectDto) {
     return ResponseEntity.ok(service.put(subjectDto));
   }
 
   @DeleteMapping
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public void deleteSubject(@RequestBody SubjectDto subjectDto) {
     service.delete(subjectDto);
   }

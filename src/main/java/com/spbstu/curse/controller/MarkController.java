@@ -29,19 +29,19 @@ public class MarkController {
   }
 
   @PostMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public ResponseEntity<MarkDto> addMark(@RequestBody MarkDto markDto) {
     return ResponseEntity.ok(service.save(markDto));
   }
 
   @DeleteMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public void deleteMark(@RequestBody MarkDto markDto) {
     service.delete(markDto);
   }
 
   @PutMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public ResponseEntity<MarkDto> updateMark(@RequestBody MarkDto markDto) {
     return ResponseEntity.ok(service.put(markDto));
   }

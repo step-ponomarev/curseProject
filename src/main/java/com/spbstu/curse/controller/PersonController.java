@@ -16,7 +16,6 @@ public class PersonController {
   private final PersonService service;
 
   @GetMapping
-  @PreAuthorize("isAuthenticated()")
   public ResponseEntity<List<PersonDto>> getAll() {
     return ResponseEntity.ok(service.findAll());
   }
@@ -28,19 +27,19 @@ public class PersonController {
   }
 
   @DeleteMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public void deletePerson(@RequestBody PersonDto personDto) {
     service.delete(personDto);
   }
 
   @PutMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public ResponseEntity<PersonDto> updatePerson(@RequestBody PersonDto personDto) {
     return ResponseEntity.ok(service.update(personDto));
   }
 
   @PostMapping
-  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyAuthority('ADMIN')")
   public ResponseEntity<PersonDto> addPerson(@RequestBody PersonDto personDto) {
     return ResponseEntity.ok(service.save(personDto));
   }
